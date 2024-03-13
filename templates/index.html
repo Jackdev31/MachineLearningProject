@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>4 P's</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    <!-- Your custom CSS -->
     <link href="{{ url_for('static', filename='styleah.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
      <div class="container">
         <h2>Hampang You Want?</h2>
-        <form action="/suggested" method="post">
-            <div class="form-group">
-                <label for="game_genre">Game Genre</label>
-                <select class="form-control paadjust" name="game_genre" id="game_genre">
+        <form action="/suggested" method="post" class="form-inline">
+            <div class="form-group mr-3">
+                <label for="game_genre" class="mr-2">Game Genre:</label>
+                <select class="form-control" name="game_genre" id="game_genre">
                     {% for key, value in genres.items() %}
                         <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="form-group">
-                <label for="game_type">Game Type</label>
-                <select class="form-control paadjust" name="game_type" id="game_type">
+            <div class="form-group mr-3">
+                <label for="game_type" class="mr-2">Game Type:</label>
+                <select class="form-control" name="game_type" id="game_type">
                     {% for key, value in game_types.items() %}
                         <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <button type="submit" class="btn btn-warning paadjustbutt">Generate</button>
+            <button type="submit" class="btn btn-warning">Generate</button>
         </form>
         <br>
         {% if recommended_games %}
-        <h6>Game Genre : {{ selected_genre }}</h6>
-        <h6>Game Type : {{ selected_game_type }}</h6>
-        <h3>Recommended Games</h3>
+        <h3>Recommended Games :</h3>
         <br>
         <ul class="list-unstyled recommended-games">
             {% for game in recommended_games %}
             <li>
-                <img src="{{ url_for('static', filename=game[1]) }}" alt="{{ game[0] }}" class="img-thumbnail">
+                <img src="{{ url_for('static', filename=game[1]) }}" alt="{{ game[0] }}" class="img-thumbnail game-image">
                 <span style="color:#FDA403">{{ game[0] }}</span>
             </li>
             {% endfor %}
@@ -50,12 +45,12 @@
 
 
         {% if related_games %}
-    <h3>You may also like</h3>
+    <h3>You may also like :</h3>
     <br>
     <ul class="list-unstyled recommended-games">
     {% for game in related_games %}
     <li>
-        <img src="{{ url_for('static', filename=game[1]) }}" alt="{{ game[0] }}" class="img-thumbnail">
+        <img src="{{ url_for('static', filename=game[1]) }}" alt="{{ game[0] }}" class="img-thumbnail game-image">
         <span style="color:#FDA403">{{ game[0] }}</span>
     </li>
     {% endfor %}

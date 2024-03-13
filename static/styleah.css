@@ -22,34 +22,28 @@ h3,h2,h6,label{
 }
 form{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 label{
     margin-bottom: 10px;
     font-weight: bold;
-
 }
-select{
-    padding: 12px;
-    margin-bottom: 20px;
+select, .btn {
     border-radius: 8px;
-    border: 2px solid #ffffff;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
 }
-input[type="submit"]{
-    padding: 12px 20px;
-    background-color: #d63031; 
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
+.select-label {
+    margin-right: 10px;
+}
+.btn-warning {
+    background-color: #FDA403;
+    color: black;
+    border-color: #FDA403;
     transition: background-color 0.3s ease;
 }
-input[type="submit"]:hover{
-    background-color: #ff5252; 
+.btn-warning:hover {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
 }
 .recommended-games{
     display: flex;
@@ -57,21 +51,18 @@ input[type="submit"]:hover{
     flex-wrap: wrap;
 }
 .recommended-games li{
-
     width: 30%; 
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
 }
-.recommended-games li img{
-    width: 155px;
-    height: 155px;
-    margin-bottom: 5px;
-    border-radius: 20px;
+.game-image {
+    width: 100%;
+    height: 290px; 
     object-fit: cover;
+    border-radius: 20px;
 }
 .btn-clear{
     background-color: transparent;
@@ -86,10 +77,3 @@ input[type="submit"]:hover{
     color: hotpink;
     border-color: #FDA403; 
 }
-.paadjust{
-    width: 50%; 
-}
-.paadjustbutt{
-    width:15%; 
-}
-
