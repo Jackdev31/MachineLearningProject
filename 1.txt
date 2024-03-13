@@ -1,0 +1,8 @@
+Action - 1
+Shooter -2
+Rpg -3 
+Horror -4
+Racing -5
+Puzzle -6 
+Adventure -7
+Sport -8
