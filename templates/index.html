@@ -14,16 +14,16 @@
             <div class="form-group mr-3">
                 <label for="game_genre" class="mr-2">Game Genre:</label>
                 <select class="form-control" name="game_genre" id="game_genre">
-                    {% for key, value in genres.items() %}
-                        <option value="{{ key }}">{{ value }}</option>
+                    {% for a, i in genres.items() %} <!-- a for mapping string values of dictionary and i for the values-->
+                        <option value="{{ a }}">{{ i }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="form-group mr-3">
                 <label for="game_type" class="mr-2">Game Type:</label>
                 <select class="form-control" name="game_type" id="game_type">
-                    {% for key, value in game_types.items() %}
-                        <option value="{{ key }}">{{ value }}</option>
+                    {% for a, i in game_types.items() %} <!-- a for mapping string values of dictionary and i for the values-->
+                        <option value="{{ a }}">{{ i }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -35,14 +35,13 @@
         <br>
         <ul class="list-unstyled recommended-games">
             {% for game in recommended_games %}
-            <li>
+            <li><!---->
                 <img src="{{ url_for('static', filename=game[1]) }}" alt="{{ game[0] }}" class="img-thumbnail game-image">
                 <span style="color:#FDA403">{{ game[0] }}</span>
             </li>
             {% endfor %}
         </ul>
         {% endif %}
-
 
         {% if related_games %}
     <h3>You may also like :</h3>
